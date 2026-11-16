@@ -30,14 +30,34 @@ const DOM = {
 /**
  * 1. Initialize Application
  */
-function initApp() {
+async function initApp() {
   applyTheme(AppState.theme);
   setupLiveClock();
   setupEventListeners();
-  renderDiscoveries();
 
   if (DOM.currentYear) {
     DOM.currentYear.textContent = new Date().getFullYear();
+  }
+
+  // Load verified discoveries from data/discoveries.json if present
+  await loadDiscoveriesData();
+  renderDiscoveries();
+}
+
+/**
+ * Fetch published discoveries from repository data file
+ */
+async function loadDiscoveriesData() {
+  try {
+    const res = await fetch('data/discoveries.json', { cache: 'no-store' });
+    if (res.ok) {
+      const data = await res.json();
+      if (Array.isArray(data)) {
+        AppState.discoveries = data;
+      }
+    }
+  } catch (err) {
+    console.info('Discoveries file empty or loading default view.');
   }
 }
 
