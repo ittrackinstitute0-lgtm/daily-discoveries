@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Discoveries Pakistan</title>
+  <meta name="description" content="Chronicles of archaeological, natural, scientific, and cultural discoveries from across Pakistan.">
+  
+  <!-- Google Fonts for clean typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand">
+        <span class="brand-badge">PK</span>
+        <span class="brand-text">Daily Discoveries<span class="dot">.</span></span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="#feed" class="nav-link active">Live Feed</a>
+        <a href="#provinces" class="nav-link">Regions</a>
+        <a href="#about" class="nav-link">About</a>
+        <button class="btn btn-outline" id="themeToggle" aria-label="Toggle dark/light mode">
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+        <button class="btn btn-primary" id="subscribeBtn">Subscribe</button>
+      </nav>
+
+      <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container hero-container">
+      <div class="hero-tag">
+        <span class="live-pulse"></span> Nationwide Exploration & Findings
+      </div>
+      <h1 class="hero-title">
+        Unearthing wonders from every corner of <em>Pakistan</em>.
+      </h1>
+      <p class="hero-subtitle">
+        Archaeological findings, biodiversity breakthroughs, geological marvels, and scientific advancements reported live across Punjab, Sindh, Khyber Pakhtunkhwa, Balochistan, Gilgit-Baltistan, and Azad Kashmir.
+      </p>
+
+      <!-- Real-time Status / Live Indicator -->
+      <div class="feed-status-bar">
+        <div class="status-indicator">
+          <span class="ping-dot"></span>
+          <span>Feed Status: <strong>Live & Listening</strong></span>
+        </div>
+        <div class="status-timestamp" id="liveClock">
+          Karachi (PKT) — Loading time...
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter & Province Selector -->
+  <section class="filter-section" id="provinces">
+    <div class="container">
+      <div class="filter-bar">
+        <div class="filter-label">Filter by Region:</div>
+        <div class="filter-chips" id="filterChips">
+          <button class="chip active" data-filter="all">All Pakistan</button>
+          <button class="chip" data-filter="punjab">Punjab</button>
+          <button class="chip" data-filter="sindh">Sindh</button>
+          <button class="chip" data-filter="kpk">Khyber Pakhtunkhwa</button>
+          <button class="chip" data-filter="balochistan">Balochistan</button>
+          <button class="chip" data-filter="gb">Gilgit-Baltistan</button>
+          <button class="chip" data-filter="ajk">Azad Kashmir</button>
+          <button class="chip" data-filter="isb">Islamabad</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Feed / Discoveries Container -->
+  <main class="feed-section" id="feed">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Latest Discoveries</h2>
+        <span class="counter-badge" id="discoveryCount">0 Discoveries</span>
+      </div>
+
+      <!-- Discovery Cards Container (Blank / Empty State Managed by JS) -->
+      <div class="discoveries-grid" id="discoveriesContainer">
+        <!-- Kept intentionally blank as requested. Dynamic items or empty state will render here. -->
+      </div>
+    </div>
+  </main>
+
+  <!-- About & Mission Section -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-card">
+        <div class="about-content">
+          <h3>Connecting Pakistan Through Knowledge</h3>
+          <p>
+            From the ancient Indus Valley ruins and the high peaks of Karakoram to the mineral-rich mountains of Balochistan and lush valleys of Kashmir, our goal is to document every new milestone and discovery in real-time.
+          </p>
+        </div>
+        <div class="about-stats">
+          <div class="stat-item">
+            <span class="stat-number">8</span>
+            <span class="stat-label">Administrative Regions</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">24/7</span>
+            <span class="stat-label">Automated Dispatch</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <div class="brand">
+          <span class="brand-badge">PK</span>
+          <span class="brand-text">Daily Discoveries<span class="dot">.</span></span>
+        </div>
+        <p class="footer-tagline">Preserving history, tracking nature, and inspiring curiosity across Pakistan.</p>
+      </div>
+
+      <div class="footer-meta">
+        <p>© <span id="currentYear"></span> Daily Discoveries Pakistan. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#feed">Discoveries</a>
+          <a href="#provinces">Regions</a>
+          <a href="#about">About</a>
+          <a href="#">RSS / API Feed</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal for Subscribing to Alerts -->
+  <div class="modal-backdrop" id="subscribeModal" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close" id="modalCloseBtn" aria-label="Close dialog">&times;</button>
+      <div class="modal-header">
+        <h3>Get Instant Discovery Alerts</h3>
+        <p>Be the first to know whenever an archaeological or scientific discovery is reported in Pakistan.</p>
+      </div>
+      <form id="subscribeForm" class="modal-form">
+        <div class="form-group">
+          <label for="subscriberEmail">Email Address</label>
+          <input type="email" id="subscriberEmail" placeholder="e.g. wanderer@pakistan.com" required>
+        </div>
+        <div class="form-group">
+          <label for="regionPref">Select Region of Interest</label>
+          <select id="regionPref">
+            <option value="all">All Corners of Pakistan</option>
+            <option value="punjab">Punjab</option>
+            <option value="sindh">Sindh</option>
+            <option value="kpk">Khyber Pakhtunkhwa</option>
+            <option value="balochistan">Balochistan</option>
+            <option value="gb">Gilgit-Baltistan</option>
+            <option value="ajk">Azad Kashmir</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Enable Notifications</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
